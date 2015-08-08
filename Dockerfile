@@ -32,7 +32,7 @@ RUN chmod +x /*.sh
 COPY . /app
 RUN apt-get update && apt-get install -y pkg-config imagemagick libmagickwand-dev  && rm -rf /var/lib/apt/lists/* \
 	&& gem install actionpack-action_caching actionpack-page_caching action_param_caching rmagick 
-	&& bundle install
+RUN bundle install
 # 复制supervisord.conf
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # 启动supervisord
