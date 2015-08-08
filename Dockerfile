@@ -30,6 +30,7 @@ COPY start.sh /start.sh
 RUN chmod +x /*.sh
 #复制代码
 COPY . /app
+WORKDIR /app
 # 复制supervisord.conf
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # 启动supervisord
