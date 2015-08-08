@@ -30,7 +30,7 @@ COPY start.sh /start.sh
 RUN chmod +x /*.sh
 #复制代码
 COPY . /app
-RUN gem install actionpack-action_caching actionpack-page_caching action_param_caching rmagick && bundle install
+RUN apt-get install -y pkg-config && gem install actionpack-action_caching actionpack-page_caching action_param_caching rmagick && bundle install
 # 复制supervisord.conf
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # 启动supervisord
