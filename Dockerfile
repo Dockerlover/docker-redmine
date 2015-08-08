@@ -27,7 +27,7 @@ RUN { \
 VOLUME /var/lib/mysql
 # 复制启动脚本
 COPY start.sh /start.sh
-RUN chmod +x *.sh
+RUN chmod +x /*.sh
 #复制代码
 COPY . /app
 # 复制supervisord.conf
